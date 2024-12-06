@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Palette Converter</title>
+        <meta name="description" content="Website to convert images to a specific color pallete">
+
+        <meta property="og:title" content="Palette Converter">
+        <meta property="og:description" content="Website to convert images to a specific color pallete">
+        <meta property="og:site_name" content="Palette Converter">
+        <meta property="og:type" content="website">
+                
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Palette Converter">
+        <meta name="twitter:description" content="Website to convert images to a specific color pallete">
+
+        <link rel="stylesheet" href="https://fonts.bunny.net/css?family=rethink-sans:400&display=swap">
+        <link rel="stylesheet" href="static/style.css">
+    </head>
+    <body>
+        <header>
+            <h1>Palette Converter</h1>
+        </header>
+        <main>
+            <div id="mainDiv">
+                <canvas id="imageCanvas" width="500" height="500"></canvas>
+                <input type="file" id="upload" accept="image/*">
+                <div id="buttonsContainer">
+                    <button id="applyFilterBtn">Apply Filter</button>
+                    <button id="downloadBtn">Download Image</button>
+                </div>
+                Color Palette:
+                <select id="paletteSelect" style="margin-bottom: 10px;">
+                    <option value="CatLatte">Catpuccin Latte</option>
+                    <option value="CatFrappe">Catpuccin Frappe</option>
+                    <option value="CatMacchiato">Catpuccin Macchiato</option>
+                    <option value="CatMocha">Catpuccin Mocha</option>
+                    <option value="RGB">RGB</option>
+                    <option value="RGBv2">Extended RGB</option>
+                    <option value="Solarized">Solarized</option>
+                    <option value="Dracula">Dracula</option>
+                    <option value="Nord">Nord</option>
+                    <option value="Gruvbox">Gruvbox</option>
+                    <option value="GruvboxLight">Gruvbox Light</option>
+                    <option value="Monokai">Monokai</option>
+                </select>
+                Settings:
+                <div id="configContainer">
+                    <input type="checkbox" id="ditherToggle"> Enable Dithering
+                    <input type="checkbox" id="multiplierToggle"> Alternative multipliers
+                    <input type="checkbox" id="autoRedraw"> Automatic Filter
+                </div>
+            </div>
+            <div id="imageModal" class="modal">
+                <span class="close">&times;</span>
+                <img class="modal-content" id="fullSizeImage">
+            </div>
+        </main>
+        <footer>
+            <p>The image conversion runs fully on the client side, no data is sent to any server</p>
+        </footer>
+        <script src="static/main.js"></script>
+    </body>
+</html>
